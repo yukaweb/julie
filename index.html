@@ -21,27 +21,35 @@
   .name{font-size:14px;margin:0 0 8px}
   audio{width:100%}
   .hint{opacity:.8;font-size:12px;margin-top:18px}
+      .card{
+      background: rgba(0,0,0,.55);
+      backdrop-filter: blur(4px);
+      border-radius: 12px;
+      padding: 16px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
 </style>
 </head>
 <body>
-  <h1>🎧👨🏾‍🦲👩🏼 C&J in the Air </h1>
 
-  <h2> Vol.1 — Debute </h2>
-  <div class="track">
-    <p class="name">Track 01</p>
-    <audio controls preload="none" src="https://drive.google.com/file/d/1k3w1x6sq-LPLE45oCqauTDFAzQVeGJxf/view?usp=drive_link"></audio>
-  </div>
-  <div class="track">
-    <p class="name">Track 02</p>
-    <audio controls preload="none" src="LIEN_DIRECT_MP3_2"></audio>
+  <div class="card">
+    <h1>🎧 Playlists privées</h1>
+
+    <h2>Playlist 1 — Ambiance</h2>
+    <div class="track">
+      <p class="name">Track 01</p>
+      <audio controls preload="none" src="LIEN_DIRECT_MP3_1"></audio>
+    </div>
+
+    <h2>Playlist 2 — Démo</h2>
+    <div class="track">
+      <p class="name">Track 02</p>
+      <audio controls preload="none" src="LIEN_DIRECT_MP3_2"></audio>
+    </div>
+
+    <p class="hint">Astuce : sur iPhone, le lecteur HTML5 est le plus fiable.</p>
   </div>
 
-  <h2>Playlist 2 — Démo</h2>
-  <div class="track">
-    <p class="name">Track 03</p>
-    <audio controls preload="none" src="LIEN_DIRECT_MP3_3"></audio>
-  </div>
-
-  <p class="hint">Astuce : sur iPhone, le lecteur HTML5 est le plus fiable.</p>
 </body>
 </html>
