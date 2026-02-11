@@ -51,6 +51,37 @@
 
 
   </div>
+<script>
+  (function () {
+    const audios = Array.from(document.querySelectorAll('audio'));
 
+    // Stoppe les autres quand une piste démarre
+    audios.forEach((audio) => {
+      audio.addEventListener('play', () => {
+        audios.forEach((other) => {
+          if (other !== audio && !other.paused) {
+            other.pause();
+            other.currentTime = 0; // enlève cette ligne si tu préfères "pause" sans reset
+          }
+        });
+      });
+    });
+
+    // Auto-enchaînement
+    audios.forEach((audio, idx) => {
+      audio.addEventListener('ended', async () => {
+        const next = audios[idx + 1];
+        if (!next) return;
+        next.currentTime = 0;
+        try {
+          await next.play(); // sur iPhone ça marche si la lecture a été initiée par l'utilisateur au départ
+        } catch (e) {
+          // Si le navigateur bloque l'autoplay, l'utilisateur devra appuyer sur Play.
+          // Tu peux afficher un message ici si tu veux.
+        }
+      });
+    });
+  })();
+</script>
 </body>
 </html>
